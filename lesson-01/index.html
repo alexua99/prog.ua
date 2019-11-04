@@ -8,18 +8,20 @@
     <title>JS Lasson One</title>
 
     <style>
-        body{
+        body {
             background-color: darkred;
             text-align: center;
             font-size: 34px;
             font-weight: 600;
             color: gainsboro;
         }
-        img{
+
+        img {
             width: 500px;
             margin: 0 auto;
         }
-        div{
+
+        div {
             width: 170px;
             height: 50px;
             border-radius: 50px;
@@ -38,71 +40,99 @@
 
         phone: while (true) {
             var phoneSelecte = prompt('Nokia / Iphone / Samsung');
-            var phoneColor = prompt('Red / Blue / Black');
-            
-            if (phoneSelecte === null || phoneColor === null ) { 
-                document.write('Выход'); 
-                break phone; 
+            var phoneColor;
+
+            if (phoneSelecte === null || phoneColor === null) {
+                document.write('Выход');
+                break phone;
             };
             //exit
             if (phoneSelecte === 'Nokia' || phoneSelecte === 'nokia') {
                 phone = 'Nokia 3310';
                 phoneImg = 'https://drive.google.com/uc?export=view&id=1fIyfZXjdtfPLbZUX1w1sD92i6dzlJgfS';
-                switch (phoneColor) {
-                    case 'red':
-                        color = 'red';
-                        prise = nokiaPrase + 44;
+                colorPhon: while (true) {
+                    phoneColor = prompt('Red / Blue / Black');
+                    if (phoneColor === null) {
+                        document.write('Выход');
                         break phone;
-                    case 'blue':
-                        color = 'blue';
-                        prise = nokiaPrase + 54;
-                        break phone;
-                    case 'black':
-                        color = 'black';
-                        prise = nokiaPrase + 73;
-                        break phone;
-                };
+                    };
+                    switch (phoneColor) {
+                        case 'red':
+                            color = 'red';
+                            prise = nokiaPrase + 44;
+                            break phone;
+                        case 'blue':
+                            color = 'blue';
+                            prise = nokiaPrase + 54;
+                            break phone;
+                        case 'black':
+                            color = 'black';
+                            prise = nokiaPrase + 73;
+                            break phone;
+                        default:
+                            alert('Неправельный цвет!!');
+                    };
+                }
+
             };//NOKIA
             if (phoneSelecte === 'Iphone' || phoneSelecte === 'iphone') {
                 phone = 'Iphone 7+';
                 phoneImg = 'https://drive.google.com/uc?export=view&id=1jR5oJ-0Zq4oRo3cEdt3gRsd-PjKdxTxz';
-                switch (phoneColor) {
-                    case 'red':
-                        color = 'red';
-                        prise = iphonePrise + 122;
+                colorPhon: while (true) {
+                    phoneColor = prompt('Red / Blue / Black');
+                    if (phoneColor === null) {
+                        document.write('Выход');
                         break phone;
-                    case 'blue':
-                        color = 'blue';
-                        prise = iphonePrise + 144;
-                        break phone;
-                    case 'black':
-                        color = 'black';
-                        prise = iphonePrise + 112;
-                        break phone;
-                };
+                    };
+                    switch (phoneColor) {
+                        case 'red':
+                            color = 'red';
+                            prise = iphonePrise + 122;
+                            break phone;
+                        case 'blue':
+                            color = 'blue';
+                            prise = iphonePrise + 144;
+                            break phone;
+                        case 'black':
+                            color = 'black';
+                            prise = iphonePrise + 112;
+                            break phone;
+                        default:
+                            alert('Неправельный цвет!!');
+                    };
+                }
             };//IPHONE
             if (phoneSelecte === 'Samsung' || phoneSelecte === 'samsung') {
                 phone = 'Samsung s8';
                 phoneImg = 'https://drive.google.com/uc?export=view&id=1KU1-J38VGfnEoJJ__LBTUKgl9rBIrCpy';
-                switch (phoneColor) {
-                    case 'red':
-                        color = 'red';
-                        prise = samsungPrise + 65;
+                colorPhon: while (true) {
+                    phoneColor = prompt('Red / Blue / Black');
+                    if (phoneColor === null) {
+                        document.write('Выход');
                         break phone;
-                    case 'blue':
-                        color = 'blue';
-                        prise = samsungPrise + 76;
-                        break phone;
-                    case 'black':
-                        color = 'black';
-                        prise = samsungPrise + 445;
-                        break phone;
-                };
-            }else{alert('Неправлеьный ввод! Попробуйте еще раз')};//Samsung
+                    };
+                    switch (phoneColor) {
+                        case 'red':
+                            color = 'red';
+                            prise = samsungPrise + 65;
+                            break phone;
+                        case 'blue':
+                            color = 'blue';
+                            prise = samsungPrise + 76;
+                            break phone;
+                        case 'black':
+                            color = 'black';
+                            prise = samsungPrise + 445;
+                            break phone;
+                        default:
+                            alert('Неправельный цвет!!');
+                    };
+                }
+            } else { alert('Неправлеьный ввод! Попробуйте еще раз') };//Samsung
         };
-        if (phoneSelecte !== null){
-        document.write(phone + "<br>" + `<div style="background-color: ${color};">${color}</div>` + " " + prise+ '$' + '<br>' + "<img src="+phoneImg+">");
-        }
+        if (phoneSelecte !== null && phoneColor !== null) {
+            document.write(phone + "<br>" + `<div style="background-color: ${color};">${color}</div>` + " " + prise + '$' + '<br>' + "<img src=" + phoneImg + ">");
+        };
     </script>
 </body>
 
